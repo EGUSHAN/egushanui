@@ -1,4 +1,4 @@
-# eui
+# egushanui
 
 ## Project setup
 ```

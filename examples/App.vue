@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <eg-button type='primary'>button</eg-button>
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
@@ -7,11 +8,12 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-
+// import eButton from '../packages/Button'
 export default {
   name: "App",
   components: {
     HelloWorld,
+    // eButton: eButton
   },
 };
 </script>

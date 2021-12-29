@@ -1,11 +1,10 @@
 {
-  "name": "eui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "egushanui",
+  "version": "0.0.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lib": "vue-cli-service build --target lib --name xui --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
