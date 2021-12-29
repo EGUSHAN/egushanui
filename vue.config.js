@@ -1,3 +1,4 @@
+const path = require("path");
 module.exports = {
   // 修改 src 为 examples
   pages: {
@@ -7,6 +8,8 @@ module.exports = {
       filename: "index.html"
     }
   },
+  // 关闭 eslint 检测
+  lintOnSave: false,
   // 扩展 webpack 配置，使 packages 加入编译
   chainWebpack: config => {
     config.module
@@ -20,5 +23,13 @@ module.exports = {
           // 修改它的选项...
           return options
         })
+  },
+  css: {
+    requireModuleExtension: true,
+    loaderOptions: {
+      scss: {
+        prependData: `@import "/styles/index.scss";`,
+      },
+    },
   }
 };
