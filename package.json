@@ -6,8 +6,7 @@
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name egushanui --dest lib packages/index.js",
     "lint": "eslint --ext .js ./src",
-    "lint:packages": "eslint packages --fix",
-    "lint:examples": "eslint examples --fix"
+    "lint:fix": "eslint examples packages index.js --fix"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -1,10 +1,9 @@
 import Vue from "vue";
 import App from "./App.vue";
 
-import eui from "../packages/index";
+import EgushanUI from "../index";
 
-console.log(eui);
-Vue.use(eui);
+Vue.use(EgushanUI);
 
 Vue.config.productionTip = false;
 
