@@ -4,7 +4,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name xui --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name egushanui --dest lib packages/index.js",
+    "lint": "eslint --ext .js ./src",
+    "lint:packages": "eslint packages --fix",
+    "lint:examples": "eslint examples --fix"
   },
   "dependencies": {
     "core-js": "^3.6.5",
