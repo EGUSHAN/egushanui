@@ -14,7 +14,6 @@ $psdBaseWidth: 640!default;
     }
 }
 
-// 
 @mixin circleBox($radius: 5px) {
   border-radius: $radius;
   -moz-border-radius: $radius;
@@ -29,10 +28,6 @@ $psdBaseWidth: 640!default;
   @include circleBox(50%);
 }
 
-@mixin sprite{
-  background-image: url(#{$imageRoot}/sprite.png);
-  background-repeat: no-repeat;
-}
 
 @mixin scale($zoom){
   zoom: $zoom;
