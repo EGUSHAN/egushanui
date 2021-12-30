@@ -1,0 +1,312 @@
+@import "./globalVals";
+// 设计图纸的宽度，用来计算页面中的长度单位， 默认值640
+$psdBaseWidth: 640!default;
+
+// 浮动清除
+@mixin clearfix() {
+    &:after {
+      content: "*";
+      display: block;
+      height: 0px;
+      font-size: 0px;
+      visibility: hidden;
+      clear: both;
+    }
+}
+
+// 
+@mixin circleBox($radius: 5px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin circle($radius: 10px){
+  width: $radius;
+  height: $radius;
+  @include circleBox(50%);
+}
+
+@mixin sprite{
+  background-image: url(#{$imageRoot}/sprite.png);
+  background-repeat: no-repeat;
+}
+
+@mixin scale($zoom){
+  zoom: $zoom;
+  -moz-transform:scale($zoom);
+  -moz-transform-origin: 0 0;
+}
+
+$legacy-support-for-ie : false;
+//去除单位
+//mixin start
+//移动端的默认除以2
+@mixin rounded($vert, $horz, $radius: 5px) {
+  border-#{$vert}-#{$horz}-radius: $radius;
+  -moz-border-radius-#{$vert}#{$horz}: $radius;
+  -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+@mixin size($x,$y) {
+  width:$x;
+  height:$y;
+}
+@mixin transiTion($item:all,$time:.5s,$effect:ease-in-out,$delay:0s){
+  -webkit-transition:$item $time $effect $delay;
+  -moz-transition:$item $time $effect $delay;
+  -o-transition:$item $time $effect $delay;
+  transition:$item $time $effect $delay;
+}
+
+@mixin boxShadow($x,$y,$size,$color){
+  //  10px 10px 5px #888888;
+  -webkit-box-shadow:$x $y $size $color;
+  -moz-box-shadow:$x $y $size $color;
+  -o-box-shadow:$x $y $size $color;
+  box-shadow:$x $y $size $color;
+}
+@mixin textShadow($x,$y,$size,$color){
+  //  10px 10px 5px #888888;
+  -webkit-text-shadow:$x $y $size $color;
+  -moz-text-shadow:$x $y $size $color;
+  -o-text-shadow:$x $y $size $color;
+  text-shadow:$x $y $size $color;
+}
+
+@mixin tranlate3D($x,$y,$z){
+  //  10px 10px 5px #888888;
+  -webkit-transform:translate3d($x,$y,$z);
+  -moz-transform:translate3d($x,$y,$z);
+  -o-transform:translate3d($x,$y,$z);
+  transform:translate3d($x,$y,$z);
+}
+
+@mixin rotate3D($x,$y,$z,$a){
+  //  10px 10px 5px #888888;
+  -webkit-transform:rotate3d($x,$y,$z,$a);
+  -moz-transform:rotate3d($x,$y,$z,$a);
+  -o-transform:rotate3d($x,$y,$z,$a);
+  transform:rotate3d($x,$y,$z,$a);
+}
+@mixin rotate($x){
+  //  10px 10px 5px #888888;
+  -webkit-transform:rotate($x);
+  -moz-transform:rotate($x);
+  -ms-transform:rotate($x);
+  -o-transform:rotate($x);
+  transform:rotate($x);
+}
+@mixin rotateZ($a){
+  //  10px 10px 5px #888888;
+  -webkit-transform:rotateZ($a);
+  -moz-transform:rotateZ($a);
+  -o-transform:rotateZ($a);
+  transform:rotateZ($a);
+}
+
+@mixin tranlateOrigen($x,$y){
+  //  10px 10px 5px #888888;
+  -webkit-transform-origin:$x $y;
+  -moz-transform-origin:$x $y;
+  -o-transform-origin:$x $y;
+  transform-origin:$x $y;
+}
+@mixin perspecTive($x){
+  -webkit-perspective:$x;
+  -moz-perspective:$x;
+  -o-perspective:$x;
+  perspective:$x;
+}
+
+@mixin perStyle(){
+  -webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d;}
+
+@mixin transitionDelay($x){
+  transition-delay: $x;
+  -moz-transition-delay: $x;
+  -webkit-transition-delay: $x;
+  -o-transition-delay: $x;
+}
+
+@mixin animaTion($name,$sec:1s,$an:linear,$delay:0s,$count:infinite,$direction:alternate,$state:running){
+  animation-name: $name;
+  animation-duration: $sec;
+  animation-timing-function: $an;
+  animation-delay: $delay;
+  animation-iteration-count: $count;
+  animation-direction: $direction;
+  animation-play-state: $state;
+
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $sec;
+  -webkit-animation-timing-function: $an;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-iteration-count: $count;
+  -webkit-animation-direction: $direction;
+  -webkit-animation-play-state: $state;
+
+  -moz-animation-name: $name;
+  -moz-animation-duration: $sec;
+  -moz-animation-timing-function: $an;
+  -moz-animation-delay: $delay;
+  -moz-animation-iteration-count: $count;
+  -moz-animation-direction: $direction;
+  -moz-animation-play-state: $state;
+
+  -ms-animation-name: $name;
+  -ms-animation-duration: $sec;
+  -ms-animation-timing-function: $an;
+  -ms-animation-delay: $delay;
+  -ms-animation-iteration-count: $count;
+  -ms-animation-direction: $direction;
+  -ms-animation-play-state: $state;
+}
+@mixin opaciTy($a) {
+  opacity: $a;
+  filter: alpha(opacity=100-$a*100);
+}
+@mixin justify{
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  text-align-last: justify;
+  -moz-text-align-last: justify;
+  -webkit-text-align-last: justify;
+  &:after {
+    content: ".";
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    line-height: 0;
+  }
+}
+
+//dashed border for somewhere
+@mixin oneSideDashedBorder($direction:top){
+  border-#{$direction}: 1px dashed #e4e4e4;
+}
+
+//
+@mixin scaLe($scl:1){
+  transform: scale($scl);
+  -moz-transform: scale($scl);
+  -webkit-transform: scale($scl);
+  -o-transform: scale($scl);
+}
+
+@mixin triangle($dir,$mainline,$halfBottom,$color){
+  @if $dir=="top"{
+    border-bottom:$mainline solid $color;
+    border-left:$halfBottom solid transparent;
+    border-right:$halfBottom solid transparent;
+  }
+  @else if $dir=="left"{
+    border-right:$mainline solid $color;
+    border-top:$halfBottom solid transparent;
+    border-bottom:$halfBottom solid transparent;
+  }
+  @else if $dir=="right"{
+    border-left:$mainline solid $color;
+    border-left:$halfBottom solid transparent;
+    border-right:$halfBottom solid transparent;
+  }
+  @else if $dir=="bottom"{
+    border-top:$mainline solid $color;
+    border-left:$halfBottom solid transparent;
+    border-right:$halfBottom solid transparent;
+  }
+}
+
+@mixin arrow($dir: left, $border-color:#a6abbc, $border-width: 2px){
+  border-top: $border-width solid $border-color;
+  border-right: $border-width solid $border-color;
+  @if $dir=="left"{
+    @include rotate(45deg)
+  }
+  @if $dir=="bottom"{
+    @include rotate(135deg)
+  }
+  @if $dir=="right"{
+    @include rotate(225deg)
+  }
+  @if $dir=="top"{
+    @include rotate(315deg)
+  }
+}
+/**
+ * 特殊字体
+ */
+@mixin px2px($name, $px){
+  #{$name}: round($px / 2) * 1px;
+  [data-dpr = "2"] & {
+    #{$name}: $px * 1px;
+  }
+  // for mx3
+  [data-dpr = "2.5"] & {
+    #{$name}: round($px * 2.5 / 2) * 1px;
+  }
+  // for 小米note
+  [data-dpr = "2.75"] & {
+    #{$name}: round($px * 2.75 / 2) * 1px;
+  }
+  [data-dpr = "3"] & {
+    #{$name}: round($px / 2 * 3) * 1px
+  }
+  // for 三星note4
+  [data-dpr = "4"] & {
+    #{$name}: $px * 2px
+  }
+}
+/**
+ * to Loacal rem
+ */
+@function toRem($val){
+  @return $val * 16 / $psdBaseWidth + rem;
+}
+
+@mixin repeatListColor($attr){
+  $list:$list-repeat-color-1,
+  $list-repeat-color-2,
+  $list-repeat-color-3,
+  $list-repeat-color-4,
+  $list-repeat-color-5,
+  $list-repeat-color-6,
+  $list-repeat-color-7,
+  $list-repeat-color-8;
+  @each $value in $list{
+    &:nth-child(#{length($list)}n+#{index($list,$value)}){
+      #{$attr}:$value;
+    }
+  }
+}
+
+@mixin repeatListColorInner($tag,$attr){
+  $list:$list-repeat-color-1,
+  $list-repeat-color-2,
+  $list-repeat-color-3,
+  $list-repeat-color-4,
+  $list-repeat-color-5,
+  $list-repeat-color-6,
+  $list-repeat-color-7,
+  $list-repeat-color-8;
+  @each $value in $list{
+    @if $tag == ":before"{
+      &:nth-child(#{length($list)}n+#{index($list,$value)}):before{
+        #{$attr}:$value;
+      }
+    }@else if $tag == ":after"{
+      &:nth-child(#{length($list)}n+#{index($list,$value)}):after{
+        #{$attr}:$value;
+      }
+    }@else{
+      &:nth-child(#{length($list)}n+#{index($list,$value)}){
+        #{$tag}{
+          #{$attr}:$value;
+        }
+      }
+    }
+  }
+}
