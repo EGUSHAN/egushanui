@@ -10,3 +10,14 @@ $--color-danger: #f56c6c; // danger 信息
 
 $--color-text-regular: #606266 !default;
 
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
+
+
+
+$--color-text-placeholder: #C0C4CC !default;
+$--border-color-lighter: #EBEEF5 !default;
+
+$--button-disabled-font-color: $--color-text-placeholder !default;
+$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-border-color: $--border-color-lighter !default;

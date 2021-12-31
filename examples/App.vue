@@ -8,6 +8,14 @@
       <eg-button type="warning">警告按钮</eg-button>
       <eg-button type="danger">危险按钮</eg-button>
     </div>
+    <div class="demo-button">
+      <eg-button disabled>默认按钮</eg-button>
+      <eg-button type="primary" disabled>主要按钮</eg-button>
+      <eg-button type="success" disabled>成功按钮</eg-button>
+      <eg-button type="info" disabled>信息按钮</eg-button>
+      <eg-button type="warning" disabled>警告按钮</eg-button>
+      <eg-button type="danger" disabled>危险按钮</eg-button>
+    </div>
    <div class="demo-button">
       <eg-button plain>朴素按钮</eg-button>
       <eg-button type="primary" plain>主要按钮</eg-button>

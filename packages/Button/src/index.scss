@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import '../../../styles/common/var.scss';
+@import "../../../styles/common/var.scss";
 button {
   margin: 0;
   padding: 0;
@@ -40,8 +40,14 @@ button {
     border-radius: 50%;
     padding: 12px;
   }
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus {
+    cursor: not-allowed;
+    border-color: transparent;
+    opacity: 0.5;
+  }
 }
-
 
 @each $type in (primary, success, warning, info, danger) {
   .eg-button--#{$type} {
