@@ -2,7 +2,7 @@
   <button
     class="eg-button"
     @click="handleClick"
-    :disabled="buttonDisabled || loading"
+    :disabled="buttonDisabled "
     :autofocus="autofocus"
     :type="nativeType"
     :class="[
