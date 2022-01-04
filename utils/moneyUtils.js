@@ -1,12 +1,3 @@
-/*
- * @Author: EGUSHAN
- * @Date: 2021-12-30 10:28:42
- * @LastEditTime: 2021-12-30 10:29:51
- * @LastEditors: Please set LastEditors
- * @Description: 价格转换
- * @FilePath: \egushanui\utils\moneyUtils.js
- */
-
 // 钱币从后台到前台时除以100，数据库里存的是分
 export function m2front(money) {
   return money === "" || typeof money === "undefined" ? "" : parseFloat((money / 100).toFixed(2));
