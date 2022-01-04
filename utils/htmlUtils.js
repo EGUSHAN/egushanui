@@ -20,5 +20,3 @@ export function addClosingSlashes(htmlString) {
   }
   return outString;
 }
-
-
