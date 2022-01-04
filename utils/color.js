@@ -84,4 +84,4 @@ export function rgbtohsl(rgb) {
   l = Math.round(l * 100 * 0.8) + "%";
   const str = "hsl(" + h + "," + s + "," + l + ")";
   return str;
-},
+}
