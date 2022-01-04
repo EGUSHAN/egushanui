@@ -13,10 +13,7 @@ export function m2back(money) {
   return money === "" || typeof money === "undefined" ? "" : Math.round(money * 100);
 }
 
-// 验证正整数
-export function formatNumber(e) {
-  let flag = new RegExp("^[1-9]([0-9])*$").test(e);
-  if (!flag) {
-    return true;
-  }
-}
+
+
+// 金钱格式化，三位加逗号
+export const formatMoney = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
