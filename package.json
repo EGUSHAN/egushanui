@@ -1,6 +1,6 @@
 {
   "name": "egushanui",
-  "version": "0.0.2",
+  "version": "0.0.11",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
