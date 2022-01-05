@@ -164,7 +164,7 @@ export const isLicensePlateNumberNER = (value) => regs.LicensePlateNumberNERReg.
  */
 export const isLicensePlateNumberNNER = (value) => regs.LicensePlateNumberNNERReg.test(value);
 
-/**
+/**验证车牌号（非新能源 和 新能源）
  * @param { string } value
  */
 export const isLicensePlateNumber = (value) => regs.LicensePlateNumberReg.test(value);
