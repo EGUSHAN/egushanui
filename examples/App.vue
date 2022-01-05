@@ -41,6 +41,19 @@
       <eg-button type="danger" circle>危</eg-button>
     </div>
 
+    <popover>
+      <template slot="content">
+        <div>popover内容1</div>
+      </template>
+      <button>点我1</button>
+    </popover>
+    <popover>
+      <template slot="content">
+        <div>popover内容2</div>
+      </template>
+      <button>点我2</button>
+    </popover>
+
     <span style="display: inline-block; width: 200px; height: 200px" id="span">预览</span>
     <img id="imgs" src="./assets/logo.png" alt="" width="300" height="400" />
   </div>
@@ -48,11 +61,13 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Popover from "./components/Popover/index.vue";
 // import eButton from '../packages/Button'
 export default {
   name: "App",
   components: {
     HelloWorld,
+    Popover,
     // eButton: eButton
   },
   mounted() {
