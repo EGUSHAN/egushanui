@@ -101,4 +101,27 @@ export function isYesterday(val) {
   }
 }
 
+function formatDate(date) {
+  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+}
+
+/**
+ * 
+ * @param {*} dateString  yyyy-mm-dd   | yyyy/mm/dd
+ * @returns 获取指定日期 所在 周的每天
+ */
+export function getWeekDay(dateString) {
+  let dateStringReg = /^\d{4}[/-]\d{1,2}[/-]\d{1,2}$/
+  let presentDate = new Date(dateString)
+  console.log(presentDate,'presentDate')
+  let today
+  if (dateString.match(dateStringReg)) {
+    today = presentDate.getDay() !== 0 ? presentDate.getDay() : 7
+    return Array.from(new Array(7), function (val, index) {
+      return formatDate(new Date(presentDate.getTime() - (today - index - 1) * 24 * 60 * 60 * 1000))
+    })
+  } else {
+    throw new Error('dateString should be like "yyyy-mm-dd" or "yyyy/mm/dd"')
+  }
+}
 
