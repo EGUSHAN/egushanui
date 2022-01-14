@@ -6,7 +6,7 @@ import EgushanUI from "../index";
 Vue.use(EgushanUI);
 
 Vue.config.productionTip = false;
-console.log('aaaaa')
+console.log("aaaaa");
 
 new Vue({
   render: (h) => h(App),
