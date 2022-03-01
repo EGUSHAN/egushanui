@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "easy-js-camera": "^2.1.0",
+    "easy-vue-camera": "^1.0.5",
     "vue": "^2.6.11",
+    "vue-cam-vision": "0.0.8",
+    "vue-camera-gestures": "^2.0.0",
     "vue-signature-pad": "^3.0.1"
   },
   "devDependencies": {

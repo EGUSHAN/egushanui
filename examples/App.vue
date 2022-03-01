@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <WebCam
+        ref="webcam"
+        :deviceId="deviceId"
+        width="auto"
+        height="100%"
+        @cameras="onCameras"
+        @camera-change="onCameraChange"
+        :isFrontCam="frontCam"
+        :googleKey="googleKey"
+        >
+    </WebCam>
     <div class="demo-button">
       <eg-button>默认按钮</eg-button>
       <eg-button type="primary">主要按钮</eg-button>
@@ -53,7 +64,8 @@
       </template>
       <button>点我2</button>
     </popover>
-
+    <!-- <v-easy-camera
+    v-model="picture"></v-easy-camera> -->
     <span style="display: inline-block; width: 200px; height: 200px" id="span">预览</span>
     <img id="imgs" src="./assets/logo.png" alt="" width="300" height="400" />
   </div>
@@ -62,12 +74,30 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import Popover from "./components/Popover/index.vue";
+import EasyCamera from 'easy-vue-camera';
+import { WebCam } from 'vue-cam-vision'
 // import eButton from '../packages/Button'
 export default {
   name: "App",
+  data() {
+    return {
+      picture:'',
+      captures: [],
+      imgReport: [],
+      frontCam: false,
+      webcam: null,
+      img: null,
+      camera: null,
+      deviceId: null,
+      devices: [],
+      googleKey: config.googleVisionKey
+    }
+  },
   components: {
     HelloWorld,
     Popover,
+    'v-easy-camera': EasyCamera,
+     WebCam
     // eButton: eButton
   },
   mounted() {
@@ -80,6 +110,15 @@ export default {
     };
   },
   methods: {
+    onCameras() {
+      console.log(e)
+    },
+    onCameraChange(e) {
+      console.log(e)
+    },
+    doSomething(e) {
+      console.log(e)
+    },
     getImageColor(img, type = "array") {
       const canvas = document.createElement("canvas");
       canvas.width = img.width;

@@ -6,7 +6,9 @@ import EgushanUI from "../index";
 Vue.use(EgushanUI);
 
 Vue.config.productionTip = false;
-console.log("aaaaa");
+import EasyCamera from "easy-vue-camera";
+
+Vue.use(EasyCamera);
 
 new Vue({
   render: (h) => h(App),
